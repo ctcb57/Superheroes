@@ -17,13 +17,15 @@ namespace Super_Heroes.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+
+            return View(context.Superheroes);
         }
 
         // GET: Superheroes/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var superhero = context.Superheroes.FirstOrDefault(s => s.superheroId == id);
+            return View(superhero);
         }
 
         // GET: Superheroes/Create

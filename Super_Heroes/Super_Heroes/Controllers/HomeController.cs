@@ -26,5 +26,12 @@ namespace Super_Heroes.Controllers
 
             return View();
         }
+
+        public ActionResult Create()
+        {
+            ViewBag.Message = "The create page.";
+
+            return View();
+        }
     }
 }
