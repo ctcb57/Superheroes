@@ -17,7 +17,6 @@ namespace Super_Heroes.Controllers
         }
         public ActionResult Index()
         {
-
             return View(context.Superheroes);
         }
 
@@ -54,17 +53,26 @@ namespace Super_Heroes.Controllers
         // GET: Superheroes/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var superheroToEdit = context.Superheroes.FirstOrDefault(s => s.superheroId == id);
+            return View(superheroToEdit);
         }
 
         // POST: Superheroes/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Superheroes superheroes)
         {
             try
             {
                 // TODO: Add update logic here
+                var superheroToEdit = context.Superheroes.FirstOrDefault(s => s.superheroId == id);
 
+                superheroToEdit.superheroName = Request.Form["superheroName"];
+                superheroToEdit.alterEgo = Request.Form["alterEgo"];
+                superheroToEdit.primaryAbility = Request.Form["primaryAbility"];
+                superheroToEdit.secondaryAbility = Request.Form["secondaryAbility"];
+                superheroToEdit.catchphrase = Request.Form["catchphrase"];
+
+                context.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -76,17 +84,20 @@ namespace Super_Heroes.Controllers
         // GET: Superheroes/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var superheroToDelete = context.Superheroes.Find(id);
+            return View(superheroToDelete);
         }
 
         // POST: Superheroes/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Superheroes superheroes)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                var superheroToDelete = context.Superheroes.FirstOrDefault(s => s.superheroId == id);
+                context.Superheroes.Remove(superheroToDelete);
+                context.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch

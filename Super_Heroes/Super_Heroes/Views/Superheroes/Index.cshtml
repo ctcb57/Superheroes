@@ -8,24 +8,12 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Superhero", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.superheroName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.alterEgo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.primaryAbility)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.secondaryAbility)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.catchphrase)
         </th>
         <th></th>
     </tr>
@@ -34,18 +22,6 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.superheroName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.alterEgo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.primaryAbility)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.secondaryAbility)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.catchphrase)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.superheroId }) |
