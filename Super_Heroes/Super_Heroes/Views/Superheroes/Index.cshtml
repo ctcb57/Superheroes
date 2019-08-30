@@ -5,30 +5,38 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <br />
-<h2>Superheroes List</h2>
+<h2>Superhero List</h2>
 <br />
 <p>
     @Html.ActionLink("Create New Superhero", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            <h6>Superhero Name</h6>
-        </th>
-        <th></th>
-    </tr>
-
+<table class="table table-hover">
+    <thread>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.superheroName)
+            </th>
+            <th></th>
+        </tr>
+    </thread>
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.superheroName)
-        </td>
-        <td style="padding-left: 700px;">
-            @Html.ActionLink("Edit", "Edit", new { id=item.superheroId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.superheroId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.superheroId })
-        </td>
-    </tr>
+    <tbody>
+        <tr>
+            <th scope="row">
+                @Html.DisplayFor(modelItem => item.superheroName)
+            </th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.superheroId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.superheroId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.superheroId })
+            </td>
+        </tr>
+    </tbody>
 }
 
 </table>

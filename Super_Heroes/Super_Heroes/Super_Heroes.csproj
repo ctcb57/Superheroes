@@ -281,7 +281,6 @@
     <Content Include="Views\Superheroes\Create.cshtml" />
     <Content Include="Views\Superheroes\Index.cshtml" />
     <Content Include="Views\Superheroes\Details.cshtml" />
-    <Content Include="Views\Superheroes\View.cshtml" />
     <Content Include="Views\Superheroes\Delete.cshtml" />
     <Content Include="Views\Superheroes\Edit.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
