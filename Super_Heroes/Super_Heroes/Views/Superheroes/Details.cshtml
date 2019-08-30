@@ -4,55 +4,33 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Details</h2>
-
+<br />
+<br />
 <div>
-    <h4>Superheroes</h4>
+    <h2>Superhero Details</h2>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.superheroName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.superheroName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.alterEgo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.alterEgo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.primaryAbility)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.primaryAbility)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.secondaryAbility)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.secondaryAbility)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.catchphrase)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.catchphrase)
-        </dd>
-
-    </dl>
+    <table class="table table-hover">
+        <thread>
+            <tr>
+                <th scope="col">Superhero Name</th>
+                <th scope="col">Alter Ego</th>
+                <th scope="col">Primary Ability</th>
+                <th scope="col">Secondary Ability</th>
+                <th scope="col">Catchphrase</th>
+            </tr>
+        </thread>
+        <tbody>
+            <tr class="table-active">
+                <th scope="row">@Html.DisplayFor(model => model.superheroName)</th>
+                <td>@Html.DisplayFor(model => model.alterEgo)</td>
+                <td>@Html.DisplayFor(model => model.primaryAbility)</td>
+                <td>@Html.DisplayFor(model => model.secondaryAbility)</td>
+                <td>@Html.DisplayFor(model => model.catchphrase)</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+<br />
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.superheroId }) |
     @Html.ActionLink("Back to List", "Index")
